@@ -21,10 +21,10 @@ restService.post("/echo", function(req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   return res.json({
-    {
+
       "fulfillmentText": "yes you need nouveau devis",
-      source: "webhook-echo-sample"
-    }
+      "source": "webhook-echo-sample"
+    
   });
 });
 
