@@ -21,16 +21,17 @@ restService.post("/echo", function(req, res) {
       ? req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
   return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
+    {
+      "fulfillmentText": "yes you need nouveau devis",
+      source: "webhook-echo-sample"
+    }
   });
 });
 
 restService.post("/audio", function(req, res) {
   var speech = "";
   switch (req.body.result.parameters.AudioSample.toLowerCase()) {
-    //Speech Synthesis Markup Language 
+    //Speech Synthesis Markup Language
     case "music one":
       speech =
         '<speak><audio src="https://actions.google.com/sounds/v1/cartoon/slide_whistle.ogg">did not get your audio file</audio></speak>';
